@@ -32,6 +32,7 @@ DEFAULT_LIMIT = 10
 
 
 def get_reviews(title: str, authors: list[str]) -> list[Review]:
+    """Returns reviews for a book by its title and authors."""
     with requests.Session() as session:
         session.headers.update(HARDCOVER_HEADERS)
         book_id = _get_book_id(title, authors, session)
